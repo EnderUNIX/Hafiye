@@ -1,0 +1,9 @@
+Protocol_Id=53
+Protocol_Ident=DNS Packet
+Protocol_Length=12
+Field=Identification-16-0-0-0-1
+Field=Flags-16-16-0-0-1
+Field=Number of Questions-16-32-0-0-1
+Field=Number of Answer RRs-16-48-0-0-1
+Field=Number of Authority RRs-16-64-0-0-1
+Field=Number of Additional RRs-16-80-0-0-1

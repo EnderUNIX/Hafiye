@@ -1,0 +1,8 @@
+	EnderUNIX Hafiye 1.0 Changelog
+	------------------------------
+* Tue Aug 25 09:30:00 EEST 2004
+	fixed a terminal escape sequence injection bug reported by
+	Serkan Akpolat.
+
+* Wed Jun 12 20:57:59 EEST 2002
+	First public release

@@ -1,0 +1,9 @@
+
+		EnderUNIX Hafiye 1.0 TODO
+		-------------------------
+
+* Add code to layer 1 packet handler to
+  statically support other datalink types.
+* Fix bugs.
+* Boost performance (profiling)
+* Add more functionality ?!

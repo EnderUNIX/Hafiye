@@ -1,0 +1,7 @@
+Protocol_Id=1
+Protocol_Ident=ICMP Packet
+Field=ICMP Type-8-0-0-0-0 
+Field=ICMP Code-8-8-0-0-0 
+Field=ICMP Checksum-16-16-0-0-1 
+Field=ICMP Identifier-16-32-0-0-1 
+Field=ICMP Sequence Number-16-48-0-0-1 

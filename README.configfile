@@ -1,0 +1,67 @@
+
+How to write Knowledge-base configuration files?
+------------------------------------------------
+
+Ok, this is not yet another f***ing scripting language, you can 
+be happy ;)
+
+Needless to talk too much, lets go over this example, so you'll all
+understand this is all about.
+
+Above, is the configuration file for TCP protocol, you are expected to
+author this file and put it under LIV directory under your knowledge-base
+directory, which is /usr/local/share/hafiye by default.
+
+
+Protocol_Id=6
+This is mandatory, you have to write it. This is the "protocol identifier"
+of this protocol. Where do I get it? Well, you can get this number from 
+/usr/include/netinet/in.h
+
+There you'll see that IPPROTO_TCP has the protocol number 0x6. This means,
+in the lower layer, which is IP, the protocol field has 0x6 for TCP packets.
+
+
+Protocol_Ident=Transmission Control Protocol
+You can write whatever you want here. e.g "Hello there, I'm a TCP header!" ;)
+But it'd be wise if you write something understandable.
+
+Protocol_Length=20
+How much bytes this protocol occupies in the packet.
+
+Below are the fields of this protocol. Syntax is:
+Field=Field Identification-Number of bits-Startbit-isProtocolIdentifier-will inet_ntoa be applied
+
+Field=Source Port Number-16-0-0-0
+
+So, this field, named Source Port Number is 16 bit length, starts at position 0. It is not
+a protocol identifier, namely this field does not mark the next layer protocol, and this 
+field does not need inet_ntoa function.
+
+This much information should be enough. If you have further inquiries about this, e-mail 
+me at tarumnabalab@enderunix.org.
+
+Below is the entire Packet Knowled-base file for TCP file.
+You can find more example KB files for other Layer II, Layer III and Layer IV protocols under
+KB directory in this tarball.
+
+Enjoy!
+
+Protocol_Id=6
+Protocol_Ident=Transmission Control Protocol
+Protocol_Length=20
+Field=Source Port Number-16-0-0-0
+Field=Destination Port Number-16-16-0-0
+Field=Sequence Number-32-32-0-0
+Field=Acknowledgement Number-32-64-0-0
+Field=Header Length-4-96-0-0
+Field=Reserved-6-100-0-0
+Field=Flag URG-1-106-0-0
+Field=Flag ACK-1-107-0-0
+Field=Flag PUSH-1-108-0-0
+Field=Flag RESET-1-109-0-0
+Field=Flag SYN-1-110-0-0
+Field=Flag FIN-1-111-0-0
+Field=Window Size-16-112-0-0
+Field=TCP Checksum-16-128-0-0
+Field=Urgent Pointer-16-144-0-0

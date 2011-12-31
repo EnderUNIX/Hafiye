@@ -1,0 +1,15 @@
+Protocol_Id=2048
+Protocol_Ident=Ip Protocol
+Protocol_Length=20
+Field=Version-4-0-0-0-0 
+Field=Length-4-4-0-0-0 
+Field=TOS-8-8-0-0-0 
+Field=Total Length-16-16-0-0-1 
+Field=Identification-16-32-0-0-1 
+Field=Flags-3-48-0-0-0 
+Field=Fragment Offet-13-51-0-0-0 
+Field=TTL-8-64-0-0-0 
+Field=Protocol-8-72-1-0-0 
+Field=Header Checksum-16-80-0-0-1 
+Field=Source IP Address-32-96-0-1-0 
+Field=Destination IP Address-32-128-0-1-0 

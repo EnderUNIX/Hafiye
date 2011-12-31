@@ -1,0 +1,85 @@
+	EnderUNIX Hafiye 1.0 README
+	---------------------------
+
+This is the README file for Hafiye release 1.0.
+
+
+When I looked at the source code for various famous sniffers, I've
+noticed that they all had all seperate .C files for interpreting 
+various protocols. Why not have a sniffer that can understand 
+user-supplied protocol details? Here it is.
+
+You'll notice that under $HAFIYEDIR/KB directory, there are several
+subdirectories, LII, LIII, LIV. Under these directories, there should
+be knowledge-base configuration files for the protocols. For example,
+to make hafiye know about IP Protocol, you'll need to write a file 
+about IP and put it under LII, since IP is a layer II protocol.
+Similarly, to teach hafiye about TCP, there is a need for a file 
+for TCP under LIII directory.
+
+If you want to learn how to write configuration files, take a look 
+at the file named README.configfile. You'll find enough information
+to write one.
+
+
+When fired, Hafiye first visits each sub-directory under its knowledge-base
+directory  and opens to see whether it is a protocol knowledge-base file. 
+If so, It loads the necessary information from that file and places it
+into its memory space.
+
+After constructing the supplied knowledge-base, Hafiye starts looping
+for receiving packets. When a packet arrives, it demultiplexes the
+layers according to its knowledge-base and prints protocol-based 
+information.
+
+If you wonder how to compile Hafiye, INSTALL file is there for you
+to read.
+
+Well, assuming that you've read README.configfiles and INSTALL, you
+should've had a working Hafiye installation. 
+
+To see what you can do with Hafiye, type
+
+# hafiye -h
+
+and it'll print you available options. For the present time, there are
+only four options:
+
+	-i you can specify an interface to listen on. This is useful
+	   if you have multiple interfaces to listen on, and you want
+	   to work on a specific interface.
+
+	-k specify a location that hosts your knowledge-base files.
+	   By default, this location is /usr/local/share/hafiye
+
+	-d shows debugging information. this may be necessary while
+	   debugging your knowledge-base files.
+
+	-p put the listening interface into promiscous mode. Promisc
+	   mode is  a mode when your machines gets interested in every 
+	   packet it can see regardless of whehter the packet is 
+	   addressed to itself or not. Anyway, if you're reading
+	   this documentation, you should already know this...
+
+	-n packet count. If you specify an amount with this option,
+	   hafiye will read that much packets and it'll exit afterwards.
+
+
+        -t read timeout. If there comes no packet within this time,
+	   we give up sniffing anymore.
+
+these are "options", which means you'll have the freedom not to supply
+anyone of them and accept defaults.
+
+After the options, you can specify a pcap filter. This is the same 
+filter you use with tcpdump. Just have a look at the tcpdump man page
+to see what you can do!
+
+
+If you fire hafiye without any options or pcap filter, hafiye will
+put itself into non-promisc mode, and it'll capture and intepret
+each and every packet that it can handle.
+
+
+Ok, here it is. Enjoj!
+

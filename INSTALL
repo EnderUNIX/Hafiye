@@ -1,0 +1,25 @@
+		EnderUNIX Hafiye 1.0 INSTALL
+		----------------------------
+
+Installation is straightforward, it should compile on Posix
+compliant systems without any trouble.
+
+However, hafiye uses libpcap interface to capture packets. 
+You have to have it istalled before hafiye. You can download
+latest pcap from http://www.tcpdump.org/release/libpcap-0.7.1.tar.gz
+
+Load Makefile with you favorite editor and change PCAPINC and PCAPLIB 
+variables to point to the pcap includes and pcap library respectively.
+
+Then,
+Just type:
+
+# make
+
+and you'll get a working binary named hafiye, then type
+
+# make install
+
+and you'll get hafiye installed in /usr/local/bin/. Configuration
+files will be installed as /usr/local/share/hafiye/...
+
